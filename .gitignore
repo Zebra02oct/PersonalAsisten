@@ -1,0 +1,90 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+# ...but the template must stay tracked
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+.history/
+*.orig
+*.rej
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Test / coverage output
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Camera/Video (never commit private footage)
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Model files (large, downloaded separately)
+*.pt
+*.pth
+*.onnx
+
+# Haar cascade files (can be re-downloaded if needed)
+# Note: haarcascade_frontalface_default.xml IS tracked (part of project)
+*.pkl
+*.npy
+
+# Test outputs
+test_results/
+
+# ---------------------------------------------------------------------------
+# BIOMETRIC DATA - NEVER COMMIT
+# ---------------------------------------------------------------------------
+# Enrolled face profiles contain biometric signatures (landmark-derived
+# feature vectors) for every enrolled subject. Treat them like passwords:
+# local only, never in version control.
+src/face_recognition/data/*
+!src/face_recognition/data/.gitkeep
+
+# Any other stray face-profile / signature dump
+*enrolled_profiles*.json
+*face_profile*.json
+*face_signature*.json
+
+# Local database files (MySQL is used in production; these are stray local DBs)
+*.db
+*.sqlite
+*.sqlite3
